@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap');
+
+body {
+  background-color: #040404;
+  font-family: 'Tajawal', sans-serif;
+  margin: 0;
+}
+
+.main-content {
+  padding: 172px 34px 0 157px;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 40px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top right;
+  position: relative;
+
+  &.sidebar-open {
+    padding-top: 60px;
+  }
+
+  &.bg-none {
+    background-image: none !important;
+  }
+
+  .video-background {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+  }
+
+  .sidebar {
+    position: absolute;
+    z-index: 12;
+    top: 172px;
+    left: 34px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    cursor: pointer;
+
+    &.expanded {
+      top: 70px;
+      width: 350px;
+      height: calc(100vh - 70px);
+      overflow: visible;
+      transition: left 0.3s, width 0.3s;
+
+      .item {
+        span {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+
+      .avatar {
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+        font-size: 32px;
+        color: #fff;
+
+        img {
+          margin-right: 20px;
+        }
+      }
+    }
+
+    .item {
+      font-size: 36px;
+      display: flex;
+      align-items: center;
+      column-gap: 50px;
+      color: #fff;
+
+      .image-wrap {
+        padding: 26px 28px;
+        border-radius: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &.active {
+          background-color: #3B486D;
+        }
+      }
+
+      &.expanded-active {
+        border-radius: 12px;
+        background-color: #3B486D;
+        font-weight: bold;
+
+        .image-wrap {
+          background-color: unset;
+        }
+      }
+
+      img {
+        width: 28px;
+        height: 28px;
+        max-height: 28px;
+      }
+
+      span {
+        visibility: hidden;
+        opacity: 0;
+      }
+    }
+
+    .bottom-actions {
+      position: absolute;
+      bottom: 65px;
+      left: 34px;
+
+      a {
+        display: block;
+        margin-bottom: 16px;
+        font-size: 24px;
+        font-weight: bold;
+        color: #858688;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  .content {
+    .call-to-action {
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+
+      .type {
+        color: #858688;
+        font-size: 24px;
+        font-weight: bold;
+        letter-spacing: 5px;
+        line-height: 42px;
+        text-transform: uppercase;
+      }
+
+      .title {
+        font-size: 50px;
+        text-transform: uppercase;
+      }
+
+      .info {
+        display: flex;
+        align-items: center;
+        column-gap: 16px;
+        margin-bottom: 15px;
+        margin-top: 18px;
+        font-size: 30px;
+      }
+
+      .description {
+        font-size: 32px;
+        line-height: 40px;
+      }
+
+      .actions {
+        display: flex;
+        align-items: center;
+        margin-top: 26px;
+
+        .btn {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 240px;
+          border-radius: 40px;
+          height: 72px;
+          font-size: 32px;
+          font-weight: bold;
+          border: none;
+          cursor: pointer;
+
+          &.btn-white {
+            background-color: #fff;
+            color: #000;
+            margin-right: 18px;
+
+            img {
+              margin-right: 13px;
+            }
+          }
+
+          &.btn-blue {
+            background: linear-gradient(to right, #2727F5 0%, #001671 100%);
+            color: #fff;
+          }
+        }
+      }
+    }
+
+    .slider {
+      margin-top: 100px;
+    }
+  }
+
+  .carousel-content {
+    margin-top: 144px;
+    flex: 0 0 100%;
+    max-width: 100%;
+
+    .slick-list {
+      max-height: 260px;
+    }
+
+    .title {
+      font-size: 32px;
+      font-weight: 500;
+      margin-bottom: 14px;
+    }
+
+    .slick-slide {
+      margin-inline: 8px !important;
+    }
+
+    .slider-item {
+      width: 200px;
+      height: 260px;
+      cursor: pointer;
+
+      div {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+      }
+    }
+  }
+}
+
+.mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background: linear-gradient(to right, #040404, transparent);
+}
